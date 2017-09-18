@@ -4,7 +4,9 @@ const nunjucks = require('nunjucks');
 const app = express();
 
 nunjucks.configure('./views/');
-nunjucks.render('index.html', { name: 'Zachary' });
+nunjucks.render('index.html', { title: 'TEMPLATE', people: [ { name: 'Zachary' }, { name: 'Jesse' }, { name: 'Max' }]}, function (err, output) {
+  console.log(output);
+});
 
 app.use(morgan('dev'));
 
