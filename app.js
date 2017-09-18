@@ -1,7 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
+const nunjucks = require('nunjucks');
 const app = express();
 
+nunjucks.configure('./views/index.html');
+nunjucks.render('./views/index.html', { name: 'Zachary' });
 
 app.use(morgan('dev'));
 
