@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const app = express();
 
-nunjucks.configure('./views/index.html');
-nunjucks.render('./views/index.html', { name: 'Zachary' });
+nunjucks.configure('./views/');
+nunjucks.render('index.html', { name: 'Zachary' });
 
 app.use(morgan('dev'));
 
