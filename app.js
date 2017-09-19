@@ -3,11 +3,17 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const app = express();
 
-nunjucks.configure('./views/');
-nunjucks.render('index.html', { title: 'TEMPLATE', people: [ { name: 'Zachary' }, { name: 'Jesse' }, { name: 'Max' }]}, function (err, output) {
-  if (err) throw err;
-  console.log(output);
-});
+// nunjucks.configure('./views/');
+// nunjucks.render('index.html',  {
+//   if (err) throw err;
+//   console.log(output);
+// });
+
+const people = [ { name: 'Zachary' }, { name: 'Jesse' }, { name: 'Max' }];
+
+app.set('view engine', 'html');
+app.engine('html', nunjucks.render);
+nunjucks.configure('views', {noCache: true});
 
 app.use(morgan('dev'));
 
@@ -18,7 +24,7 @@ app.use('/special', function (req, res, next) {
 })
 
 app.get('/', function (req, res) {
-  res.send('Nothing here.');
+  res.render('index', {title: 'TEMPLATE', people: people} );
 });
 
 app.listen(3000, function () {
