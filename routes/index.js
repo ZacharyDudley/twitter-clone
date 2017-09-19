@@ -7,4 +7,10 @@ router.get('/', function (req, res) {
   res.render( 'index', { tweets: tweets } );
 });
 
+router.use(express.static('public'));
+// router.use(express.static('public'), function (req, res) {
+//   res.sendFile('../public/stylesheets/style.css');
+//   // res.static('../public/stylesheets/style.css');
+// })
+
 module.exports = router;
