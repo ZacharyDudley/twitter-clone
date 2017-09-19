@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-let data = [];
+let data = [{name: 'max', content: 'Tweet'}];
 
 function add(name, content) {
   data.push({
@@ -42,5 +42,3 @@ module.exports = {
 for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
-
-console.log(data);

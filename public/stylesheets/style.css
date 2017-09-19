@@ -45,6 +45,11 @@ code {
   padding: 7px;
 }
 
+li {
+  color: blue;
+  list-style: none;
+}
+
 .tweetbox img {
   float: left;
   height: 48px;
