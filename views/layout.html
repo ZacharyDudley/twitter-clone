@@ -79,4 +79,23 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io.connect();
+    socket.on('connect', function(){
+      console.log('Connected to server via WebSockets!');
+    });
+
+    socket.on('newTweet', function (tweet) {
+      alert('Refreshing...check the console...')
+      console.log(tweet)
+      let tweetbox = document.getElementsByClassName('tweetbox');
+      // console.log(tweetbox)
+      // console.log(tweet);
+      // tweetbox.appendChild('<p>TWEET</p>');
+      // socket.broadcast.emit('this', clients)
+    });
+  </script>
+
 </html>

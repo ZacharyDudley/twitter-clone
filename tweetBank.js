@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-let data = [{name: 'max', content: 'Tweet'}];
+let data = [];
 
 function add(name, content) {
   data.push({
@@ -22,8 +22,8 @@ const randArrayEl = function(arr) {
 };
 
 const getFakeName = function() {
-  const fakeFirsts = ['Nimit', 'David', 'Shanna', 'Emily', 'Scott', 'Karen', 'Ben', 'Dan', 'Ashi', 'Kate', 'Omri', 'Gabriel', 'Joe', 'Geoff'];
-  const fakeLasts = ['Hashington', 'Stackson', 'McQueue', 'OLogn', 'Ternary', 'Claujure', 'Dunderproto', 'Binder', 'Docsreader', 'Ecma'];
+  const fakeFirsts = ['Zachary', 'David', 'Shanna', 'Emily', 'Scott', 'Karen', 'Ben', 'Dan', 'Ashi', 'Kate', 'Omri', 'Gabriel', 'Joe', 'Geoff'];
+  const fakeLasts = ['Hashington', 'Friedman', 'McQueue', 'OLogn', 'Ternary', 'Claujure', 'Dunderproto', 'Binder', 'Docsreader', 'Ecma'];
   return randArrayEl(fakeFirsts) + " " + randArrayEl(fakeLasts);
 };
 
