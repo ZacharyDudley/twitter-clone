@@ -5,6 +5,7 @@ const app = express();
 
 nunjucks.configure('./views/');
 nunjucks.render('index.html', { title: 'TEMPLATE', people: [ { name: 'Zachary' }, { name: 'Jesse' }, { name: 'Max' }]}, function (err, output) {
+  if (err) throw err;
   console.log(output);
 });
 
